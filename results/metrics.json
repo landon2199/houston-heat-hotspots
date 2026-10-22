@@ -1,0 +1,181 @@
+{
+  "study_area": {
+    "state_fips": "48",
+    "county_fips": "201",
+    "name": "Harris County, TX"
+  },
+  "imagery": {
+    "collection": "landsat-c2-l2 (Microsoft Planetary Computer)",
+    "platforms": [
+      "landsat-8",
+      "landsat-9"
+    ],
+    "years": [
+      2024,
+      2025
+    ],
+    "months": "Jun-Aug",
+    "max_scene_cloud_pct": 40,
+    "n_scenes": 63,
+    "n_dates": 36,
+    "resolution_m": 90,
+    "crs": "EPSG:32615",
+    "pixel_clear_obs_median": 11.0
+  },
+  "tracts": {
+    "total": 1115,
+    "kept": 1111,
+    "dropped_water": 2,
+    "dropped_too_few_pixels": 2,
+    "rule": "drop if water pixels > 50% or ALAND = 0, or < 20 valid pixels"
+  },
+  "n_tracts_analyzed": 1111,
+  "lst_c": {
+    "mean": 45.16091471790419,
+    "min": 36.508409901975675,
+    "max": 51.61928577423096,
+    "p10": 41.60653549065828,
+    "p90": 48.348283195495604
+  },
+  "ndvi": {
+    "mean": 0.4626727645861304,
+    "min": 0.17527529020463267,
+    "max": 0.7693458550417697
+  },
+  "weights": {
+    "type": "Queen contiguity, row-standardised",
+    "n": 1111,
+    "mean_neighbors": 6.57,
+    "islands_attached_knn1": 0,
+    "components": 1
+  },
+  "global_moran": {
+    "I": 0.6188182260860777,
+    "expected_I": -0.0009009009009009009,
+    "z_norm": 36.67056029379751,
+    "p_norm_two_sided": 2.15224897331695e-294,
+    "p_sim_one_sided": 0.001,
+    "permutations": 999
+  },
+  "gi_star": {
+    "fdr": "Benjamini-Hochberg",
+    "hot_spots": 147,
+    "cold_spots": 173,
+    "counts": {
+      "Not Significant": 791,
+      "Cold Spot - 99% Confidence": 87,
+      "Hot Spot - 95% Confidence": 58,
+      "Hot Spot - 99% Confidence": 57,
+      "Cold Spot - 95% Confidence": 56,
+      "Hot Spot - 90% Confidence": 32,
+      "Cold Spot - 90% Confidence": 30
+    },
+    "without_fdr": {
+      "hot_spots": 222,
+      "cold_spots": 254
+    }
+  },
+  "lisa": {
+    "alpha": 0.05,
+    "permutations": 999,
+    "counts": {
+      "Not significant": 672,
+      "Low-Low": 224,
+      "High-High": 190,
+      "High-Low": 15,
+      "Low-High": 10
+    }
+  },
+  "regression": {
+    "covariates": [
+      "ndvi"
+    ],
+    "income_source": null,
+    "n": 1111,
+    "ols": {
+      "coef": {
+        "const": 54.922784022526116,
+        "ndvi": -21.098863066543345
+      },
+      "se": {
+        "const": 0.21142428616046857,
+        "ndvi": 0.4458963865127828
+      },
+      "r2": 0.668755481789816,
+      "adj_r2": 0.6684567942170385,
+      "aic": 4116.47765112772,
+      "log_lik": -2056.23882556386,
+      "residual_moran": {
+        "I": 0.48393095662115737,
+        "p_sim": 0.001,
+        "z_norm": 28.688893224994892
+      },
+      "lm_lag": [
+        469.69375730313953,
+        3.736021907114855e-104
+      ],
+      "lm_error": [
+        815.1024100897378,
+        2.8090750572219888e-179
+      ],
+      "robust_lm_lag": [
+        20.363164641649398,
+        6.405091555057189e-06
+      ],
+      "robust_lm_error": [
+        365.7718174282477,
+        1.5588870155911416e-81
+      ]
+    },
+    "spatial_lag": {
+      "coef": {
+        "const": 28.62601369847778,
+        "ndvi": -14.176988744551087
+      },
+      "se": {
+        "const": 1.2277409028337454,
+        "ndvi": 0.5168892502104404,
+        "rho": 0.023091039265058295
+      },
+      "rho": 0.5127525142950924,
+      "total_effect": {
+        "ndvi": -29.096073680177216
+      },
+      "pseudo_r2": 0.7788938235876787,
+      "aic": 3723.6218434229213,
+      "log_lik": -1858.8109217114607,
+      "residual_moran": {
+        "I": 0.1797092136310128,
+        "p_sim": 0.001,
+        "z_norm": 10.687219106521747
+      }
+    },
+    "spatial_error": {
+      "coef": {
+        "const": 54.20342352532499,
+        "ndvi": -18.603809976764694
+      },
+      "se": {
+        "const": 0.2727402519695957,
+        "ndvi": 0.48597749209609786,
+        "lambda": 0.02358242586088053
+      },
+      "lambda": 0.7848040608638737,
+      "pseudo_r2": 0.668755481789816,
+      "aic": 3540.5326896714378,
+      "log_lik": -1767.2663448357189,
+      "residual_moran": {
+        "I": 0.010332710551346677,
+        "p_sim": 0.268,
+        "z_norm": 0.664725047425226
+      }
+    },
+    "best_by_aic": "spatial_error",
+    "headline_ndvi_c_per_0.1": -1.8603809976764696,
+    "bivariate_ols": {
+      "slope_c_per_0.1_ndvi": -2.109886306654408,
+      "r2": 0.6687554817898156
+    }
+  },
+  "runtime_s": 10.6
+}
