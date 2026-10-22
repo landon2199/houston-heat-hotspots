@@ -1,0 +1,21 @@
+name: gis-portfolio
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - geopandas
+  - rasterio
+  - xarray
+  - rioxarray
+  - pystac-client
+  - planetary-computer
+  - odc-stac
+  - esda
+  - libpysal
+  - spreg
+  - mapclassify
+  - matplotlib
+  - contextily
+  - folium
+  - requests
+  - pytest
