@@ -99,6 +99,10 @@ results/         metrics.json, tracts.gpkg (tract attributes, Gi*, LISA)
 - 2020 TIGER/Line census tract boundaries: **U.S. Census Bureau**.
 - Basemap tiles (static figures and `docs/map.html`): Esri World Light Gray Canvas. Powered by Esri; sources: Esri, HERE, Garmin, © OpenStreetMap contributors, and the GIS user community. Tiles are used under the [Esri terms of use](https://www.esri.com/en-us/legal/terms/full-master-agreement) and are not redistributed in this repository.
 
+## AI assistance
+
+Built with an AI coding assistant (Claude Code, by Anthropic). Commits made with it carry its `Co-Authored-By` line.
+
 ## License
 
 MIT © 2026 Landon Melesky
