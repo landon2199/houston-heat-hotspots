@@ -197,11 +197,12 @@ def folium_map(gdf, path):
     c = g.geometry.union_all().centroid
     m = folium.Map(location=[c.y, c.x], zoom_start=9, tiles=None)
     folium.TileLayer(
-        tiles="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
-        attr="Powered by <a href='https://www.esri.com'>Esri</a> | Esri, HERE, Garmin, &copy; OpenStreetMap contributors, "
-             "and the GIS user community | Landsat: USGS | Tracts: U.S. Census Bureau",
-        name="Esri World Light Gray Canvas", max_zoom=16,
+        tiles="https://tile.openstreetmap.org/{z}/{x}/{y}.png", class_name="gray-base",
+        attr="Basemap &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors | "
+             "Landsat: USGS | Tracts: U.S. Census Bureau",
+        name="OpenStreetMap (gray)", max_zoom=19,
     ).add_to(m)
+    m.get_root().header.add_child(folium.Element("<style>.gray-base{filter:grayscale(1) brightness(1.06) contrast(0.92);}</style>"))
     bins = list(np.quantile(g["lst_c"], np.linspace(0, 1, 8)))
     cmap = branca.colormap.StepColormap(
         [matplotlib.colors.to_hex(plt.get_cmap("OrRd")(v)) for v in np.linspace(0.08, 1, 7)],

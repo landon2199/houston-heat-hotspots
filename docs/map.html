@@ -68,6 +68,7 @@
                     </style>
             
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<style>.gray-base{filter:grayscale(1) brightness(1.06) contrast(0.92);}</style>
 </head>
 <body>
     
@@ -98,13 +99,14 @@
         
     
             var tile_layer_8fc75861c31619eca6c78e8b5a1a1a42 = L.tileLayer(
-                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
-  "maxZoom": 16,
-  "maxNativeZoom": 16,
+  "className": "gray-base",
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
   "noWrap": false,
-  "attribution": "Powered by \u003ca href=\u0027https://www.esri.com\u0027\u003eEsri\u003c/a\u003e | Esri, HERE, Garmin, \u0026copy; OpenStreetMap contributors, and the GIS user community | Landsat: USGS | Tracts: U.S. Census Bureau",
+  "attribution": "Basemap \u0026copy; \u003ca href=\u0027https://www.openstreetmap.org/copyright\u0027\u003eOpenStreetMap\u003c/a\u003e contributors | Landsat: USGS | Tracts: U.S. Census Bureau",
   "subdomains": "abc",
   "detectRetina": false,
   "tms": false,
